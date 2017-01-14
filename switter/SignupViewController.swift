@@ -11,6 +11,7 @@ import UIKit
 
 class SignupViewController: UIViewController,UITextFieldDelegate,UIPickerViewDelegate,UIImagePickerControllerDelegate, UINavigationControllerDelegate{
 
+    
     @IBOutlet weak var NameTextField: UITextField!
     @IBOutlet weak var UserNameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
@@ -18,6 +19,8 @@ class SignupViewController: UIViewController,UITextFieldDelegate,UIPickerViewDel
     @IBOutlet weak var PasswordTextField: UITextField!
     @IBOutlet weak var rePasswordTextField: UITextField!
     @IBOutlet weak var imagedisp: UIImageView!
+    
+    var authservice = AuthenticationService()
     
     var pickerView: UIPickerView!
     var countryArrays = [String]()
@@ -66,31 +69,6 @@ class SignupViewController: UIViewController,UITextFieldDelegate,UIPickerViewDel
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    @IBAction func signUpAction(sender: AnyObject) {
-        
-//        let data = UIImageJPEGRepresentation(self.userImageView.image!, 0.8)
-//        let email = emailTextField.text!.lowercaseString
-//        let finalEmail = email.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
-//        let username = usernameTextField.text!
-//        let password = passwordTextField.text!
-//        let country = countryTextField.text!
-//        let biography = biographyTextField.text!
-//        
-//        if username.isEmpty || password.isEmpty || finalEmail.isEmpty || country.isEmpty || biography.isEmpty || data == nil {
-//            self.view.endEditing(true)
-//            
-//            let alertView = SCLAlertView()
-//            alertView.showError("😁OOPS😁", subTitle: "it seems like one of the Fields is empty. Please fill all the Fields and Try Again later.")
-//        } else {
-//            self.view.endEditing(true)
-//            
-//            authService.signUp(finalEmail, username: username, password: password, country: country, biography: biography, data: data)
-//        }
-//        
-        
-        
     }
     
     // Choosing User Picture
@@ -200,6 +178,46 @@ class SignupViewController: UIViewController,UITextFieldDelegate,UIPickerViewDel
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
         return 1
     }
+    @IBAction func signUpAction(sender: AnyObject) {
+        
+        let imgdata = UIImageJPEGRepresentation(imagedisp.image!, 0.8)
+        //let email = emailTextField.text!.lowercaseString
+        let emailn = emailTextField.text
+        let usern = UserNameTextField.text
+        let passw = PasswordTextField.text
+        let repassw = rePasswordTextField.text
+        let countryn = countryTextField.text
+        
+        if (emailn?.isEmpty)! || (usern?.isEmpty)! || (passw?.isEmpty)! || (repassw?.isEmpty)! || (countryn?.isEmpty)!
+            
+        {
+            self.view.endEditing(true)
+            
+            let alertView = SCLAlertView()
+            alertView.showError("😁OOPS😁", subTitle: "it seems like one of the Fields is empty. Please fill all the Fields and Try Again later.")
+            
+        }
+
+        else
+        {
+//            if passw != repassw
+//            {
+//                print(passw)
+//                print(repassw)
+//                let alertview = SCLAlertView()
+//                alertview.showError("Password Error", subTitle: "The passwords must match")
+//            }
+//            else
+//            {
+                //self.view.endEditing(true)
+                print (imgdata)
+                authservice.signUp(email: emailn!, username: usern!, password: passw!, country: countryn!, data: imgdata as NSData!)
+       
+ //           }
+        }
+        
+    }
+    
 
     
 }

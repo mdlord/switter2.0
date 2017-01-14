@@ -12,14 +12,16 @@ import Firebase
 class LoginViewController: UIViewController, UITextFieldDelegate  {
 
     
-    @IBOutlet weak var usernameTextField: UITextField!
+    @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
+    
+    var authservice = AuthenticationService()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        usernameTextField.delegate = self
+        emailTextField.delegate = self
         passwordTextField.delegate = self
         
         // Creating Tap Gesture to dismiss Keyboard
@@ -42,7 +44,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate  {
     
     // Dismissing the Keyboard with the Return Keyboard Button
     func textFieldShouldReturn(textField: UITextField) -> Bool {
-        usernameTextField.resignFirstResponder()
+        emailTextField.resignFirstResponder()
         passwordTextField.resignFirstResponder()
         return true
     }
@@ -80,5 +82,17 @@ class LoginViewController: UIViewController, UITextFieldDelegate  {
     //user login
     @IBAction func loginAction(_ sender: Any) {
 
+        let emailnm = emailTextField.text
+        let pass = passwordTextField.text
+        
+        if (emailnm?.isEmpty)! || (pass?.isEmpty)!
+        {
+            let alertView  = SCLAlertView()
+            alertView.showError("SORRY", subTitle: "All Fields Required")
+        }
+        else{
+            authservice.signIn(email:emailnm!, password:pass!)
+        }
+        
     }
 }

@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import FirebaseStorage
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -19,16 +20,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         FIRApp.configure()
-        FIRAuth.auth()?.signIn(withEmail: "mayankdaswani123@yahoo.com", password: "123456", completion: { (user,error) in
-            if error == nil{
-                print(user?.email! as Any)
-            }else{
-                print(error?.localizedDescription as Any)
-            }
-        })
-        
+        //logUser()
         return true
     }
+    
+    func logUser(){
+    if FIRAuth.auth()!.currentUser != nil {
+    
+    let tabBar = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Home") as! UITabBarController
+    self.window?.rootViewController = tabBar
+   
+        }
 
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -54,4 +56,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 }
-
+}

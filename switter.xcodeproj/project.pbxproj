@@ -10,6 +10,8 @@
 		0B361C72BE46BA650A81172D /* Pods_switterTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E741B0D29095F91659DDD9E /* Pods_switterTests.framework */; };
 		3EE5B5D05C551D7E14D1CEB2 /* Pods_switterUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6747CE902F502744E0D8C48 /* Pods_switterUITests.framework */; };
 		AC34DA14F45E506EEAA320C2 /* Pods_switter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44E503FB7AB2D328AB94859F /* Pods_switter.framework */; };
+		BE0783231E2989B400FF3B1F /* SCLAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0783211E2989B400FF3B1F /* SCLAlertView.swift */; };
+		BE0783241E2989B400FF3B1F /* SCLExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0783221E2989B400FF3B1F /* SCLExtensions.swift */; };
 		BEAD7C661E259DF200EAEBFD /* ImagepushCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAD7C651E259DF200EAEBFD /* ImagepushCell.swift */; };
 		BEAD7C681E259E1100EAEBFD /* TextpushCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAD7C671E259E1100EAEBFD /* TextpushCell.swift */; };
 		BEAD7C6E1E280FFB00EAEBFD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAD7C6D1E280FFB00EAEBFD /* LoginViewController.swift */; };
@@ -50,6 +52,8 @@
 		5900B7A7DB546448826B8A41 /* Pods-switterTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-switterTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-switterTests/Pods-switterTests.debug.xcconfig"; sourceTree = "<group>"; };
 		615351149B43B5C3AA815379 /* Pods-switter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-switter.release.xcconfig"; path = "Pods/Target Support Files/Pods-switter/Pods-switter.release.xcconfig"; sourceTree = "<group>"; };
 		8B13AAB14B600527B2DC63AD /* Pods-switterTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-switterTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-switterTests/Pods-switterTests.release.xcconfig"; sourceTree = "<group>"; };
+		BE0783211E2989B400FF3B1F /* SCLAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCLAlertView.swift; sourceTree = "<group>"; };
+		BE0783221E2989B400FF3B1F /* SCLExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCLExtensions.swift; sourceTree = "<group>"; };
 		BEAD7C651E259DF200EAEBFD /* ImagepushCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagepushCell.swift; sourceTree = "<group>"; };
 		BEAD7C671E259E1100EAEBFD /* TextpushCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextpushCell.swift; sourceTree = "<group>"; };
 		BEAD7C6D1E280FFB00EAEBFD /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -159,6 +163,8 @@
 				BEAD7C671E259E1100EAEBFD /* TextpushCell.swift */,
 				BECAB9971E248A0B003E4B62 /* Assets.xcassets */,
 				BECAB9991E248A0B003E4B62 /* LaunchScreen.storyboard */,
+				BE0783211E2989B400FF3B1F /* SCLAlertView.swift */,
+				BE0783221E2989B400FF3B1F /* SCLExtensions.swift */,
 				BECAB99C1E248A0B003E4B62 /* Info.plist */,
 				BECAB9BE1E248A7E003E4B62 /* GoogleService-Info.plist */,
 			);
@@ -467,6 +473,8 @@
 			files = (
 				BEAD7C701E28229C00EAEBFD /* SignupViewController.swift in Sources */,
 				BEAD7C6E1E280FFB00EAEBFD /* LoginViewController.swift in Sources */,
+				BE0783231E2989B400FF3B1F /* SCLAlertView.swift in Sources */,
+				BE0783241E2989B400FF3B1F /* SCLExtensions.swift in Sources */,
 				BEAD7C661E259DF200EAEBFD /* ImagepushCell.swift in Sources */,
 				BECAB9931E248A0B003E4B62 /* PushViewController.swift in Sources */,
 				BEAD7C681E259E1100EAEBFD /* TextpushCell.swift in Sources */,

@@ -162,7 +162,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wersm-twitter-blue-dark-657x360" translatesAutoresizingMaskIntoConstraints="NO" id="OpY-lb-pl0">
                                 <rect key="frame" x="67" y="54" width="241" height="128"/>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="kjC-dW-9Wo">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="kjC-dW-9Wo">
                                 <rect key="frame" x="16" y="280.5" width="343" height="30"/>
                                 <color key="backgroundColor" red="0.19542944431304932" green="0.66775649785995483" blue="0.85958069562911987" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="textColor"/>
@@ -235,8 +235,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="emailTextField" destination="kjC-dW-9Wo" id="v30-pa-cBP"/>
                         <outlet property="passwordTextField" destination="OVu-Cw-p3O" id="tGN-i7-vpH"/>
-                        <outlet property="usernameTextField" destination="kjC-dW-9Wo" id="TFc-u6-JEi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2gL-mH-Pzs" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -326,6 +326,9 @@
                                 <state key="normal" title="Sign Up">
                                     <color key="titleColor" red="0.043654305710000001" green="0.044113824709999999" blue="0.044113824709999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="signUpActionWithSender:" destination="kRS-bE-6LE" eventType="touchUpInside" id="cCg-bS-YE0"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Country" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="lvR-CF-U4c">
                                 <rect key="frame" x="16" y="318.5" width="343" height="30"/>
@@ -382,7 +385,6 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="CountryTextField" destination="lvR-CF-U4c" id="R8G-Hh-5Zq"/>
                         <outlet property="NameTextField" destination="YfJ-Oy-A14" id="adi-bE-ccy"/>
                         <outlet property="PasswordTextField" destination="bJ2-ly-UqM" id="hUt-Rp-qkK"/>
                         <outlet property="UserNameTextField" destination="wZE-YE-n1f" id="lAq-XJ-uNR"/>
@@ -401,10 +403,28 @@
             </objects>
             <point key="canvasLocation" x="1935" y="-546"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Tab Bar Controller-->
+        <scene sceneID="6yh-Dg-XnJ">
+            <objects>
+                <tabBarController storyboardIdentifier="Home" id="Gqy-nm-S5S" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="5Bc-jS-41i">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="NH4-rV-Kfy" kind="relationship" relationship="viewControllers" id="qXF-uy-sAy"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RrD-gR-4Ua" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="430" y="99"/>
+        </scene>
+        <!--Item-->
         <scene sceneID="SxU-vA-h6t">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="NH4-rV-Kfy" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="jVX-91-Bi4"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="qn2-tx-1Hi">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
