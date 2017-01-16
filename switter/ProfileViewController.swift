@@ -49,6 +49,27 @@ class ProfileViewController: UIViewController {
             print(emailid)
             self.userEmailLabel.text = emailid
 
+            let imageURL = value["photoURL"] as! String
+            
+            self.storageRef.reference(forURL: imageURL).data(withMaxSize: 1 * 1024 * 1024, completion: { (data, error) in
+                if error == nil
+                {
+                    if let data = data
+                    {
+                        DispatchQueue.main.async(execute: {
+                            
+                            self.profilepic.image = UIImage(data: data)
+                        })
+                    }
+                    
+                }
+                else
+                {
+                    let alertView = SCLAlertView()
+                    alertView.showError("😁OOPS😁", subTitle: error!.localizedDescription)
+                }
+            })
+            
         }
     })
     
