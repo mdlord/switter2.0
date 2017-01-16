@@ -12,6 +12,7 @@
 		AC34DA14F45E506EEAA320C2 /* Pods_switter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44E503FB7AB2D328AB94859F /* Pods_switter.framework */; };
 		BE0783231E2989B400FF3B1F /* SCLAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0783211E2989B400FF3B1F /* SCLAlertView.swift */; };
 		BE0783241E2989B400FF3B1F /* SCLExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0783221E2989B400FF3B1F /* SCLExtensions.swift */; };
+		BE0783261E2C0D6C00FF3B1F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0783251E2C0D6C00FF3B1F /* ProfileViewController.swift */; };
 		BEAD7C661E259DF200EAEBFD /* ImagepushCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAD7C651E259DF200EAEBFD /* ImagepushCell.swift */; };
 		BEAD7C681E259E1100EAEBFD /* TextpushCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAD7C671E259E1100EAEBFD /* TextpushCell.swift */; };
 		BEAD7C6E1E280FFB00EAEBFD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAD7C6D1E280FFB00EAEBFD /* LoginViewController.swift */; };
@@ -54,6 +55,7 @@
 		8B13AAB14B600527B2DC63AD /* Pods-switterTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-switterTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-switterTests/Pods-switterTests.release.xcconfig"; sourceTree = "<group>"; };
 		BE0783211E2989B400FF3B1F /* SCLAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCLAlertView.swift; sourceTree = "<group>"; };
 		BE0783221E2989B400FF3B1F /* SCLExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCLExtensions.swift; sourceTree = "<group>"; };
+		BE0783251E2C0D6C00FF3B1F /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		BEAD7C651E259DF200EAEBFD /* ImagepushCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagepushCell.swift; sourceTree = "<group>"; };
 		BEAD7C671E259E1100EAEBFD /* TextpushCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextpushCell.swift; sourceTree = "<group>"; };
 		BEAD7C6D1E280FFB00EAEBFD /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 				BECAB9901E248A0B003E4B62 /* AppDelegate.swift */,
 				BECAB9921E248A0B003E4B62 /* PushViewController.swift */,
 				BECAB9941E248A0B003E4B62 /* Main.storyboard */,
+				BE0783251E2C0D6C00FF3B1F /* ProfileViewController.swift */,
 				BEAD7C6F1E28229C00EAEBFD /* SignupViewController.swift */,
 				BEAD7C6D1E280FFB00EAEBFD /* LoginViewController.swift */,
 				BEAD7C711E2898CB00EAEBFD /* AuthenticationService.swift */,
@@ -473,6 +476,7 @@
 			files = (
 				BEAD7C701E28229C00EAEBFD /* SignupViewController.swift in Sources */,
 				BEAD7C6E1E280FFB00EAEBFD /* LoginViewController.swift in Sources */,
+				BE0783261E2C0D6C00FF3B1F /* ProfileViewController.swift in Sources */,
 				BE0783231E2989B400FF3B1F /* SCLAlertView.swift in Sources */,
 				BE0783241E2989B400FF3B1F /* SCLExtensions.swift in Sources */,
 				BEAD7C661E259DF200EAEBFD /* ImagepushCell.swift in Sources */,

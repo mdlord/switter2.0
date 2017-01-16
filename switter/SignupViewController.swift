@@ -200,15 +200,15 @@ class SignupViewController: UIViewController,UITextFieldDelegate,UIPickerViewDel
 
         else
         {
-//            if passw != repassw
-//            {
-//                print(passw)
-//                print(repassw)
-//                let alertview = SCLAlertView()
-//                alertview.showError("Password Error", subTitle: "The passwords must match")
-//            }
-//            else
-//            {
+            if passw != repassw
+            {
+                print(passw)
+                print(repassw)
+                let alertview = SCLAlertView()
+                alertview.showError("Password Error", subTitle: "The passwords must match")
+            }
+            else
+            {
                 //self.view.endEditing(true)
                 print (imgdata)
                 authservice.signUp(email: emailn!, username: usern!, password: passw!, country: countryn!, data: imgdata as NSData!)
@@ -220,4 +220,5 @@ class SignupViewController: UIViewController,UITextFieldDelegate,UIPickerViewDel
     
 
     
+}
 }

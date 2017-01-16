@@ -23,7 +23,7 @@
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="pushwithimage" rowHeight="347" id="r0h-f3-Tuq" customClass="ImagepushCell" customModule="switter" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="56" width="375" height="347"/>
+                                <rect key="frame" x="0.0" y="55.5" width="375" height="347"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="r0h-f3-Tuq" id="YWt-L0-JkT">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="346"/>
@@ -85,7 +85,7 @@
                                 <color key="tintColor" red="0.74725948949999998" green="0.74725948949999998" blue="0.74725948949999998" alpha="1" colorSpace="calibratedRGB"/>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="pushwithout" rowHeight="347" id="8hE-Hi-OkC" customClass="TextpushCell" customModule="switter" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="403" width="375" height="347"/>
+                                <rect key="frame" x="0.0" y="402.5" width="375" height="347"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8hE-Hi-OkC" id="GQy-kb-tJ5">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="346"/>
@@ -147,10 +147,78 @@
             </objects>
             <point key="canvasLocation" x="2330.4000000000001" y="98.50074962518741"/>
         </scene>
+        <!--Profile View Controller-->
+        <scene sceneID="MoT-b7-Z4Q">
+            <objects>
+                <viewController id="bq9-ye-jY0" customClass="ProfileViewController" customModule="switter" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="LYH-LH-WA1"/>
+                        <viewControllerLayoutGuide type="bottom" id="tkL-eo-BRM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="MEp-XY-g4T">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WUc-LK-xX4">
+                                <rect key="frame" x="67" y="128" width="240" height="240"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Email" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Pk-nO-gHo">
+                                <rect key="frame" x="16" y="395" width="343" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="@username" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nxb-Ls-pLf">
+                                <rect key="frame" x="16" y="442" width="343" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Country" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qen-TE-UAf">
+                                <rect key="frame" x="16" y="471" width="343" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="TVN-Ka-tI4">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="qWE-XD-aof">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ft3-bd-ZPp">
+                                <rect key="frame" x="279" y="7" width="80" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                <state key="normal" title="Logout">
+                                    <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="logOutActionWithSender:" destination="bq9-ye-jY0" eventType="touchUpInside" id="ExI-MR-yWb"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="profilepic" destination="WUc-LK-xX4" id="tAl-kE-xal"/>
+                        <outlet property="userCountryLabel" destination="Qen-TE-UAf" id="Hek-Jd-dyh"/>
+                        <outlet property="userEmailLabel" destination="9Pk-nO-gHo" id="wRs-40-N1f"/>
+                        <outlet property="usernameLabel" destination="9Pk-nO-gHo" id="pDd-7G-LHx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nYU-1M-ovw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2328.8000000000002" y="858.62068965517244"/>
+        </scene>
         <!--Login View Controller-->
         <scene sceneID="s60-oO-bLG">
             <objects>
-                <viewController id="Uaw-Y7-I0g" customClass="LoginViewController" customModule="switter" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="Uaw-Y7-I0g" customClass="LoginViewController" customModule="switter" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Mr5-1K-x81"/>
                         <viewControllerLayoutGuide type="bottom" id="zYt-ta-skx"/>
@@ -241,7 +309,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2gL-mH-Pzs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1228" y="-546"/>
+            <point key="canvasLocation" x="1390" y="-600"/>
         </scene>
         <!--Signup View Controller-->
         <scene sceneID="4fu-dJ-L0c">
@@ -401,7 +469,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1935" y="-546"/>
+            <point key="canvasLocation" x="2330" y="-600"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="6yh-Dg-XnJ">
@@ -414,6 +482,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="NH4-rV-Kfy" kind="relationship" relationship="viewControllers" id="qXF-uy-sAy"/>
+                        <segue destination="X9n-0Q-IxB" kind="relationship" relationship="viewControllers" id="JNE-fg-bNO"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RrD-gR-4Ua" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -439,6 +508,26 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tj3-kQ-ugw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1391.2" y="98.50074962518741"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="dKc-f6-m2P">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="X9n-0Q-IxB" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="XZs-uw-6xJ"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="RVH-4o-Ba6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.00045323109949999999" green="0.2491315603" blue="0.35732567310000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="bq9-ye-jY0" kind="relationship" relationship="rootViewController" id="TJD-s6-Dac"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qx3-EX-kQH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1390" y="859"/>
         </scene>
     </scenes>
     <resources>
