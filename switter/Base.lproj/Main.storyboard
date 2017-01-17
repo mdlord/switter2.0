@@ -141,11 +141,37 @@
                             <outlet property="delegate" destination="dxp-qt-9Vl" id="1ZR-fQ-mDK"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="tUa-Cq-jXQ"/>
+                    <navigationItem key="navigationItem" id="tUa-Cq-jXQ">
+                        <barButtonItem key="rightBarButtonItem" systemItem="compose" id="aes-ww-XJm">
+                            <connections>
+                                <segue destination="Wlz-UE-9i7" kind="popoverPresentation" popoverAnchorBarButtonItem="aes-ww-XJm" id="dS4-RP-mmj">
+                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                </segue>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dTu-uz-4eU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2330.4000000000001" y="98.50074962518741"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="7O6-yV-NlI">
+            <objects>
+                <viewController id="Wlz-UE-9i7" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="oOL-TZ-kcC"/>
+                        <viewControllerLayoutGuide type="bottom" id="rw2-xP-ZO7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kkf-6Q-Ro1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BXe-7L-KYT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3256" y="104"/>
         </scene>
         <!--Profile View Controller-->
         <scene sceneID="MoT-b7-Z4Q">
@@ -489,11 +515,11 @@
             </objects>
             <point key="canvasLocation" x="430" y="99"/>
         </scene>
-        <!--Item-->
+        <!--Home-->
         <scene sceneID="SxU-vA-h6t">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="NH4-rV-Kfy" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="jVX-91-Bi4"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="Starred Ticket_000000_25" id="jVX-91-Bi4"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="qn2-tx-1Hi">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -509,11 +535,11 @@
             </objects>
             <point key="canvasLocation" x="1391.2" y="98.50074962518741"/>
         </scene>
-        <!--Item-->
+        <!--Profile-->
         <scene sceneID="dKc-f6-m2P">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="X9n-0Q-IxB" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="XZs-uw-6xJ"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="Circled User Male_000000_25" id="XZs-uw-6xJ"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="RVH-4o-Ba6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -531,7 +557,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Circled User Male_000000_25" width="25" height="25"/>
         <image name="Person Male_000000_75" width="64" height="64"/>
+        <image name="Starred Ticket_000000_25" width="25" height="25"/>
         <image name="wersm-twitter-blue-dark-657x360" width="657" height="360"/>
     </resources>
 </document>

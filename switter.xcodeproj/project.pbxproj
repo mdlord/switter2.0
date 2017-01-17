@@ -13,6 +13,7 @@
 		BE0783231E2989B400FF3B1F /* SCLAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0783211E2989B400FF3B1F /* SCLAlertView.swift */; };
 		BE0783241E2989B400FF3B1F /* SCLExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0783221E2989B400FF3B1F /* SCLExtensions.swift */; };
 		BE0783261E2C0D6C00FF3B1F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0783251E2C0D6C00FF3B1F /* ProfileViewController.swift */; };
+		BE0783281E2D7D5300FF3B1F /* tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0783271E2D7D5300FF3B1F /* tweet.swift */; };
 		BEAD7C661E259DF200EAEBFD /* ImagepushCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAD7C651E259DF200EAEBFD /* ImagepushCell.swift */; };
 		BEAD7C681E259E1100EAEBFD /* TextpushCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAD7C671E259E1100EAEBFD /* TextpushCell.swift */; };
 		BEAD7C6E1E280FFB00EAEBFD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEAD7C6D1E280FFB00EAEBFD /* LoginViewController.swift */; };
@@ -56,6 +57,7 @@
 		BE0783211E2989B400FF3B1F /* SCLAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCLAlertView.swift; sourceTree = "<group>"; };
 		BE0783221E2989B400FF3B1F /* SCLExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCLExtensions.swift; sourceTree = "<group>"; };
 		BE0783251E2C0D6C00FF3B1F /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		BE0783271E2D7D5300FF3B1F /* tweet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tweet.swift; sourceTree = "<group>"; };
 		BEAD7C651E259DF200EAEBFD /* ImagepushCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagepushCell.swift; sourceTree = "<group>"; };
 		BEAD7C671E259E1100EAEBFD /* TextpushCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextpushCell.swift; sourceTree = "<group>"; };
 		BEAD7C6D1E280FFB00EAEBFD /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -163,6 +165,7 @@
 				BEAD7C6D1E280FFB00EAEBFD /* LoginViewController.swift */,
 				BEAD7C711E2898CB00EAEBFD /* AuthenticationService.swift */,
 				BEAD7C651E259DF200EAEBFD /* ImagepushCell.swift */,
+				BE0783271E2D7D5300FF3B1F /* tweet.swift */,
 				BEAD7C671E259E1100EAEBFD /* TextpushCell.swift */,
 				BECAB9971E248A0B003E4B62 /* Assets.xcassets */,
 				BECAB9991E248A0B003E4B62 /* LaunchScreen.storyboard */,
@@ -478,6 +481,7 @@
 				BEAD7C6E1E280FFB00EAEBFD /* LoginViewController.swift in Sources */,
 				BE0783261E2C0D6C00FF3B1F /* ProfileViewController.swift in Sources */,
 				BE0783231E2989B400FF3B1F /* SCLAlertView.swift in Sources */,
+				BE0783281E2D7D5300FF3B1F /* tweet.swift in Sources */,
 				BE0783241E2989B400FF3B1F /* SCLExtensions.swift in Sources */,
 				BEAD7C661E259DF200EAEBFD /* ImagepushCell.swift in Sources */,
 				BECAB9931E248A0B003E4B62 /* PushViewController.swift in Sources */,
