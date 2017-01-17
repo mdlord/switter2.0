@@ -20,30 +20,30 @@ class AddNewPostViewController: UIViewController , UITextViewDelegate, UITextFie
 
         self.automaticallyAdjustsScrollViewInsets = true
         self.tweetTextView.layer.cornerRadius = 5
-        self.tweetTextView.layer.borderWidth = 0.25
+        self.tweetTextView.layer.borderWidth = 0.15
       
-        self.tweetTextView.delegate = self
-        self.updatechar()
+        tweetTextView.delegate = self
+
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
     
     @IBAction func withPicButton(_ sender: Any) {
     }
 
-    func updatechar() {
-        print(self.tweetTextView.text.characters.count)
-        self.charCount.text = "\((140) - self.tweetTextView.text.characters.count)"
+    
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        
+        let newLength: Int = (textView.text as NSString).length + (text as NSString).length - range.length
+        let remainingchar: Int = 140 - newLength
+        print(remainingchar)
+        self.charCount.text = String(remainingchar)
+        
+        return true
     }
-//    
-//    func textView(textView: UITextView, shouldChangeTextinRange range: NSRange, replacementText text: String)-> Bool
-//    {
-//        
-//        let newLength: Int = (textView.text as NSString).length + (text as NSString).length - range.length
-//        let remainingchar: Int = 140 - newLength
-//        print(remainingchar)
-//        self.charCount.text = String(remainingchar)
-//        
-//        return true
-//       // return (newLength > 140) ? false : true
-//    }
+
 }
 
