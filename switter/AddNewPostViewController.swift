@@ -10,10 +10,20 @@ import UIKit
 import Firebase
 import FirebaseStorage
 
-class AddNewPostViewController: UIViewController , UITextViewDelegate, UITextFieldDelegate{
+class AddNewPostViewController: UIViewController , UITextViewDelegate, UITextFieldDelegate, UIPickerViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
 
+    var databaseRef: FIRDatabaseReference{
+        return FIRDatabase.database().reference()
+    }
+    var storageRef: FIRStorage{
+        return FIRStorage.storage()
+    }
+    
+    var currentUser: user
     @IBOutlet weak var tweetTextView: UITextView!
     @IBOutlet weak var charCount: UILabel!
+    @IBOutlet weak var tweetimage: UIImageView!
+    var imgselected = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +41,126 @@ class AddNewPostViewController: UIViewController , UITextViewDelegate, UITextFie
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewWillAppear(){
+        super.viewWillAppear(true)
+        let userID:String = (FIRAuth.auth()?.currentUser?.uid)!
+        databaseRef.child("users").child(userID).observeSingleEvent(of: .value, with: {(snapshot) in
+            
+            if let value = snapshot.value as? [String: AnyObject] {
+                
+                let name = value["username"] as! String
+                print(name)
+                self.usernameLabel.text = name
+                
+                let count = value["country"] as! String
+                print(count)
+                self.userCountryLabel.text = count
+                
+                let emailid = value["email"] as! String
+                print(emailid)
+                self.userEmailLabel.text = emailid
+                
+                let imageURL = value["photoURL"] as! String
+                
+                self.storageRef.reference(forURL: imageURL).data(withMaxSize: 1 * 1024 * 1024, completion: { (data, error) in
+                    if error == nil
+                    {
+                        if let data = data
+                        {
+                            DispatchQueue.main.async(execute: {
+                                
+                                self.profilepic.image = UIImage(data: data)
+                            })
+                        }
+                        
+                    }
+                    else
+                    {
+                        let alertView = SCLAlertView()
+                        alertView.showError("😁OOPS😁", subTitle: error!.localizedDescription)
+                    }
+                })
+                
+            }
+        })
+        
+    }
+
+        
+    }
+    
     @IBAction func withPicButton(_ sender: Any) {
+        
+        imgselected = true
+        let pickerController = UIImagePickerController()
+        pickerController.delegate = self
+        pickerController.allowsEditing = true
+        
+        let alertController = UIAlertController(title: "Add a Picture", message: "Choose From", preferredStyle: .actionSheet)
+        
+        let cameraAction = UIAlertAction(title: "Camera", style: .default) { (action) in
+            pickerController.sourceType = .camera
+            self.present(pickerController, animated: true, completion: nil)
+            
+        }
+//        let photosLibraryAction = UIAlertAction(title: "Photos Library", style: .default) { (action) in
+//            pickerController.sourceType = .photoLibrary
+//            self.present(pickerController, animated: true, completion: nil)
+//            
+//        }
+//        
+        let savedPhotosAction = UIAlertAction(title: "Saved Photos Album", style: .default) { (action) in
+            pickerController.sourceType = .savedPhotosAlbum
+            self.present(pickerController, animated: true, completion: nil)
+            
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .destructive, handler: nil)
+        
+        alertController.addAction(cameraAction)
+//        alertController.addAction(photosLibraryAction)
+        alertController.addAction(savedPhotosAction)
+        alertController.addAction(cancelAction)
+        
+        
+        present(alertController, animated: true, completion: nil)
+
+        
+    }
+    
+    @IBAction func pushpostbutton(_ sender: Any) {
+        
+        var tweetText : String!
+        if let text: String = tweetTextView.text{
+            tweetText = text
+        }
+        else{
+            tweetText = ""
+        }
+        
+        if imgselected == true{
+            let imgData = UIImageJPEGRepresentation(tweetimage.image!, 0.8)
+            let metadata = FIRStorageMetadata()
+            metadata.contentType = "image/jpeg"
+            let imagepath = "tweetimage\(FIRAuth.auth()!.currentUser!.uid)/tweetpic.jpg"
+        
+            let imageref = storageRef.reference().child(imagepath)
+            
+            imageref.put(imgData!, metadata: metadata, completion: {(newMetaData, error) in
+                if error == nil{
+                    let newTweet = tweet(username: FIRAuth.auth()!.currentUser!.displayName, tweetid: <#T##String#>, tweettext: <#T##String#>, tweetimageURL: <#T##String#>, userimageURL: <#T##String#>, firstname: <#T##String#>)
+                
+                }else{
+                    print(error!.localizedDescription)
+                }
+            })
+        }
+        
+        
+    }
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        tweetimage.image = info[UIImagePickerControllerOriginalImage] as? UIImage;
+        dismiss(animated: true, completion:nil)
     }
 
     
@@ -39,8 +168,16 @@ class AddNewPostViewController: UIViewController , UITextViewDelegate, UITextFie
         
         let newLength: Int = (textView.text as NSString).length + (text as NSString).length - range.length
         let remainingchar: Int = 140 - newLength
-        print(remainingchar)
+        //print(remainingchar)
         self.charCount.text = String(remainingchar)
+        
+        if remainingchar < 0{
+            self.charCount.text = "0 "
+            charCount.textColor = UIColor.red
+        }
+        else{
+            charCount.textColor = UIColor.black
+        }
         
         return true
     }

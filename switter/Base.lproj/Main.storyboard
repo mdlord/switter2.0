@@ -185,14 +185,22 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" tag="-1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="140" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dp4-E3-U97">
-                                <rect key="frame" x="317.5" y="269" width="28.5" height="20.5"/>
+                                <rect key="frame" x="317" y="269" width="29" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qRQ-7u-nkL">
+                                <rect key="frame" x="16" y="327" width="120" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="4yF-Nm-vhZ"/>
+                                    <constraint firstAttribute="height" constant="120" id="eIR-XZ-Pu6"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="qRQ-7u-nkL" firstAttribute="top" secondItem="6QP-d7-5Qo" secondAttribute="bottom" constant="8" id="Bba-jP-zSP"/>
                             <constraint firstItem="pzX-DW-35I" firstAttribute="leading" secondItem="kkf-6Q-Ro1" secondAttribute="leadingMargin" id="MWk-fk-QUH"/>
                             <constraint firstAttribute="trailingMargin" secondItem="dp4-E3-U97" secondAttribute="trailing" constant="13" id="OMS-Io-V6J"/>
                             <constraint firstItem="pzX-DW-35I" firstAttribute="top" secondItem="oOL-TZ-kcC" secondAttribute="bottom" constant="8" id="Q6y-qH-F6S"/>
@@ -200,6 +208,7 @@
                             <constraint firstItem="6QP-d7-5Qo" firstAttribute="top" secondItem="dp4-E3-U97" secondAttribute="top" id="f6r-0a-wkG"/>
                             <constraint firstItem="pzX-DW-35I" firstAttribute="trailing" secondItem="kkf-6Q-Ro1" secondAttribute="trailingMargin" id="hYh-ns-cjF"/>
                             <constraint firstItem="6QP-d7-5Qo" firstAttribute="leading" secondItem="pzX-DW-35I" secondAttribute="leading" id="lpN-eH-X6L"/>
+                            <constraint firstItem="qRQ-7u-nkL" firstAttribute="leading" secondItem="kkf-6Q-Ro1" secondAttribute="leadingMargin" id="mTo-X9-PyG"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Add New Post" id="fo1-IS-RIL">
@@ -208,11 +217,16 @@
                                 <segue destination="NH4-rV-Kfy" kind="presentation" id="TMC-sb-Hy6"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="iq7-iS-40y"/>
+                        <barButtonItem key="rightBarButtonItem" image="Chevron_000000_50" id="iq7-iS-40y">
+                            <connections>
+                                <action selector="pushpostbutton:" destination="Wlz-UE-9i7" id="7Xw-Jb-I3y"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="charCount" destination="dp4-E3-U97" id="5wT-TX-WgK"/>
                         <outlet property="tweetTextView" destination="pzX-DW-35I" id="WWG-U0-LlM"/>
+                        <outlet property="tweetimage" destination="qRQ-7u-nkL" id="L8O-BP-nwc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BXe-7L-KYT" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -624,6 +638,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Chevron_000000_50" width="25" height="25"/>
         <image name="Circled User Male_000000_25" width="25" height="25"/>
         <image name="Compact Camera_000000_50" width="50" height="50"/>
         <image name="Person Male_000000_75" width="64" height="64"/>
