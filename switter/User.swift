@@ -15,35 +15,36 @@ struct user {
 
     var username: String!
     var firstname: String!
-    var country: String!
+    var country: String?
+    var email: String?
     var photoURL: String!
     var uid: String!
-    var ref: FIRDatabaseReference!
-    var key: String!
+    var ref: FIRDatabaseReference?
+    var key: String?
     
 
+    init(snapshot: FIRDataSnapshot)
+    {
+        let value = snapshot.value as! [String: AnyObject]
+        
+        self.firstname = value["firstName"] as! String
+        self.username = value["username"] as! String
+        self.country = value["country"] as? String
+        self.uid = value["uid"] as! String
+        self.photoURL = value["photoURL"] as! String
+        self.email = value["email"] as? String
+        self.ref = snapshot.ref
+        self.key = snapshot.key
+        
+    }
+    
     init(username: String, country: String, photoURL:String, firstname: String, key:String = "" )
     {
         self.username = username
         self.firstname = firstname
         self.photoURL = photoURL
-        self.country = country
-      //  self.withimg = withimg
-    }
-    
-
-    init(snapshot: FIRDataSnapshot)
-    {
-        let value = snapshot.value as? [String: AnyObject]
-        
-        self.firstname = value?["firstName"] as! String
-        self.username = value?["userName"] as! String
-        self.country = value?["country"] as! String
-        self.uid = value?["uid"] as! String
-        self.photoURL = value?["photoURL"] as! String
-        self.ref = snapshot.ref
-        self.key = snapshot.key
-        
+ //       self.country = country
+        //  self.withimg = withimg
     }
     
 

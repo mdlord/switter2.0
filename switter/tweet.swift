@@ -35,15 +35,16 @@ struct tweet{
     }
     init(snapshot: FIRDataSnapshot)
     {
-         let value = snapshot.value as? [String: AnyObject]
+         let value = snapshot.value as!
+            [String: AnyObject]
 
-            self.firstname = value?["firstName"] as! String
-            self.username = value?["userName"] as! String
-            self.tweetid = value?["tweetid"] as! String
-            self.tweetimageURL = value?["tweetimageURL"] as! String
-            self.tweettext = value?["tweettext"] as! String
-            self.userimageURL = value?["userimageURL"] as! String
-            self.withimg = value?["withimg"] as! Bool
+            self.firstname = value["firstName"] as! String
+            self.username = value["username"] as! String
+            self.tweetid = value["tweetid"] as! String
+            self.tweetimageURL = value["tweetimageURL"] as! String
+            self.tweettext = value["tweettext"] as! String
+            self.userimageURL = value["userimageURL"] as! String
+            self.withimg = value["withimg"] as! Bool
             self.ref = snapshot.ref
             self.key = snapshot.key
         

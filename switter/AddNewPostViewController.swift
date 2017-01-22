@@ -28,10 +28,11 @@ class AddNewPostViewController: UIViewController , UITextViewDelegate, UIImagePi
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.automaticallyAdjustsScrollViewInsets = true
         self.tweetTextView.layer.cornerRadius = 5
         self.tweetTextView.layer.borderWidth = 0.15
-      
+        self.automaticallyAdjustsScrollViewInsets = true
+
+        
         tweetTextView.delegate = self
 
     }
@@ -42,7 +43,7 @@ class AddNewPostViewController: UIViewController , UITextViewDelegate, UIImagePi
         // Dispose of any resources that can be recreated.
     }
     
-    func viewWillAppear(){
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         
         let userRef = FIRDatabase.database().reference().child("users").queryOrdered(byChild: "uid").queryEqual(toValue: FIRAuth.auth()!.currentUser!.uid)
@@ -52,8 +53,9 @@ class AddNewPostViewController: UIViewController , UITextViewDelegate, UIImagePi
                 self.currentUser = user(snapshot: userInfo as! FIRDataSnapshot)
             }
         })
-
     }
+    
+
     
     @IBAction func withPicButton(_ sender: Any) {
         
@@ -123,10 +125,7 @@ class AddNewPostViewController: UIViewController , UITextViewDelegate, UIImagePi
                         if error==nil{
                             self.navigationController?.popToRootViewController(animated: true)
                         }
-
                     })
-                    
-                    
                 }else{
                     print(error!.localizedDescription)
                 }
