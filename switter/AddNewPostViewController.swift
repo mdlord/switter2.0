@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 import FirebaseStorage
 
-class AddNewPostViewController: UIViewController , UITextViewDelegate, UITextFieldDelegate, UIPickerViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+class AddNewPostViewController: UIViewController , UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
 
     var databaseRef: FIRDatabaseReference{
         return FIRDatabase.database().reference()
@@ -19,7 +19,7 @@ class AddNewPostViewController: UIViewController , UITextViewDelegate, UITextFie
         return FIRStorage.storage()
     }
     
-    var currentUser: user
+    var currentUser: user! 
     @IBOutlet weak var tweetTextView: UITextView!
     @IBOutlet weak var charCount: UILabel!
     @IBOutlet weak var tweetimage: UIImageView!
@@ -35,58 +35,24 @@ class AddNewPostViewController: UIViewController , UITextViewDelegate, UITextFie
         tweetTextView.delegate = self
 
     }
+
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    override func viewWillAppear(){
+    func viewWillAppear(){
         super.viewWillAppear(true)
-        let userID:String = (FIRAuth.auth()?.currentUser?.uid)!
-        databaseRef.child("users").child(userID).observeSingleEvent(of: .value, with: {(snapshot) in
-            
-            if let value = snapshot.value as? [String: AnyObject] {
-                
-                let name = value["username"] as! String
-                print(name)
-                self.usernameLabel.text = name
-                
-                let count = value["country"] as! String
-                print(count)
-                self.userCountryLabel.text = count
-                
-                let emailid = value["email"] as! String
-                print(emailid)
-                self.userEmailLabel.text = emailid
-                
-                let imageURL = value["photoURL"] as! String
-                
-                self.storageRef.reference(forURL: imageURL).data(withMaxSize: 1 * 1024 * 1024, completion: { (data, error) in
-                    if error == nil
-                    {
-                        if let data = data
-                        {
-                            DispatchQueue.main.async(execute: {
-                                
-                                self.profilepic.image = UIImage(data: data)
-                            })
-                        }
-                        
-                    }
-                    else
-                    {
-                        let alertView = SCLAlertView()
-                        alertView.showError("😁OOPS😁", subTitle: error!.localizedDescription)
-                    }
-                })
-                
+        
+        let userRef = FIRDatabase.database().reference().child("users").queryOrdered(byChild: "uid").queryEqual(toValue: FIRAuth.auth()!.currentUser!.uid)
+        
+        userRef.observe(.value, with: {(snapshot) in
+            for userInfo in snapshot.children{
+                self.currentUser = user(snapshot: userInfo as! FIRDataSnapshot)
             }
         })
-        
-    }
 
-        
     }
     
     @IBAction func withPicButton(_ sender: Any) {
@@ -103,12 +69,12 @@ class AddNewPostViewController: UIViewController , UITextViewDelegate, UITextFie
             self.present(pickerController, animated: true, completion: nil)
             
         }
-//        let photosLibraryAction = UIAlertAction(title: "Photos Library", style: .default) { (action) in
-//            pickerController.sourceType = .photoLibrary
-//            self.present(pickerController, animated: true, completion: nil)
-//            
-//        }
-//        
+        _ = UIAlertAction(title: "Photos Library", style: .default) { (action) in
+            pickerController.sourceType = .photoLibrary
+            self.present(pickerController, animated: true, completion: nil)
+            
+        }
+        
         let savedPhotosAction = UIAlertAction(title: "Saved Photos Album", style: .default) { (action) in
             pickerController.sourceType = .savedPhotosAlbum
             self.present(pickerController, animated: true, completion: nil)
@@ -148,12 +114,37 @@ class AddNewPostViewController: UIViewController , UITextViewDelegate, UITextFie
             
             imageref.put(imgData!, metadata: metadata, completion: {(newMetaData, error) in
                 if error == nil{
-                    let newTweet = tweet(username: FIRAuth.auth()!.currentUser!.displayName, tweetid: <#T##String#>, tweettext: <#T##String#>, tweetimageURL: <#T##String#>, userimageURL: <#T##String#>, firstname: <#T##String#>)
-                
+                    
+                    let newTweet = tweet(username: self.currentUser.username, withimg: true, tweetid: NSUUID().uuidString, tweettext: tweetText, tweetimageURL: String(describing: newMetaData?.downloadURL()!), userimageURL: self.currentUser.photoURL, firstname: self.currentUser.firstname)
+                    
+                    let tweetRef = self.databaseRef.child("tweet").childByAutoId()
+                    tweetRef.setValue(newTweet.toanyObject(), withCompletionBlock: {(error,ref) in
+                    
+                        if error==nil{
+                            self.navigationController?.popToRootViewController(animated: true)
+                        }
+
+                    })
+                    
+                    
                 }else{
                     print(error!.localizedDescription)
                 }
             })
+        }
+        else{
+            
+            let newTweet = tweet(username: self.currentUser.username, withimg: false, tweetid: NSUUID().uuidString, tweettext: tweetText, tweetimageURL: "", userimageURL: self.currentUser.photoURL, firstname: self.currentUser.firstname)
+            
+            let tweetRef = self.databaseRef.child("tweet").childByAutoId()
+            tweetRef.setValue(newTweet.toanyObject(), withCompletionBlock: {(error,ref) in
+                
+                if error==nil{
+                    self.navigationController?.popToRootViewController(animated: true)
+                }
+                
+            })
+        
         }
         
         

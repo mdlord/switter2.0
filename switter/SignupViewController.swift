@@ -187,8 +187,9 @@ class SignupViewController: UIViewController,UITextFieldDelegate,UIPickerViewDel
         let passw = PasswordTextField.text
         let repassw = rePasswordTextField.text
         let countryn = countryTextField.text
+        let name = NameTextField.text
         
-        if (emailn?.isEmpty)! || (usern?.isEmpty)! || (passw?.isEmpty)! || (repassw?.isEmpty)! || (countryn?.isEmpty)!
+        if (emailn?.isEmpty)! || (usern?.isEmpty)! || (passw?.isEmpty)! || (repassw?.isEmpty)! || (countryn?.isEmpty)! || (name?.isEmpty)!
             
         {
             self.view.endEditing(true)
@@ -211,7 +212,7 @@ class SignupViewController: UIViewController,UITextFieldDelegate,UIPickerViewDel
             {
                 //self.view.endEditing(true)
                 print (imgdata)
-                authservice.signUp(email: emailn!, username: usern!, password: passw!, country: countryn!, data: imgdata as NSData!)
+                authservice.signUp(email: emailn!, username: usern!, password: passw!, country: countryn!, data: imgdata as NSData!, firstname: name!)
        
  //           }
         }

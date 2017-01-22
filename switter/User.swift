@@ -14,11 +14,22 @@ import FirebaseStorage
 struct user {
 
     var username: String!
-    var firstname: String
+    var firstname: String!
     var country: String!
     var photoURL: String!
     var uid: String!
     var ref: FIRDatabaseReference!
+    var key: String!
+    
+
+    init(username: String, country: String, photoURL:String, firstname: String, key:String = "" )
+    {
+        self.username = username
+        self.firstname = firstname
+        self.photoURL = photoURL
+        self.country = country
+      //  self.withimg = withimg
+    }
     
 
     init(snapshot: FIRDataSnapshot)
@@ -27,19 +38,14 @@ struct user {
         
         self.firstname = value?["firstName"] as! String
         self.username = value?["userName"] as! String
-        self.photoURL = value?["tweetimageURL"] as! String
-        self.photoURL = value?["photoURL"] as! String
+        self.country = value?["country"] as! String
         self.uid = value?["uid"] as! String
-        
-    }
-    
-    init(username: String, photoURL: String, UserId: String)
-    {
-        self.username = username
-        self.uid = UserId
-        self.photoURL = photoURL
+        self.photoURL = value?["photoURL"] as! String
+        self.ref = snapshot.ref
+        self.key = snapshot.key
         
     }
     
 
+    
 }

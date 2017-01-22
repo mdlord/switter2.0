@@ -20,9 +20,10 @@ struct tweet{
     var tweettext: String!
     var tweetimageURL: String!
     var userimageURL: String!
+    var withimg: Bool!
     
     
-    init(username: String, tweetid: String, tweettext: String, tweetimageURL:String, userimageURL: String, firstname: String, key:String = "" )
+    init(username: String, withimg: Bool, tweetid: String, tweettext: String, tweetimageURL:String, userimageURL: String, firstname: String, key:String = "" )
     {
         self.username = username
         self.firstname = firstname
@@ -30,6 +31,7 @@ struct tweet{
         self.tweettext = tweettext
         self.tweetimageURL = tweetimageURL
         self.userimageURL = userimageURL
+        self.withimg = withimg
     }
     init(snapshot: FIRDataSnapshot)
     {
@@ -41,6 +43,7 @@ struct tweet{
             self.tweetimageURL = value?["tweetimageURL"] as! String
             self.tweettext = value?["tweettext"] as! String
             self.userimageURL = value?["userimageURL"] as! String
+            self.withimg = value?["withimg"] as! Bool
             self.ref = snapshot.ref
             self.key = snapshot.key
         
@@ -48,7 +51,7 @@ struct tweet{
     
     func toanyObject()->[String: AnyObject]
     {
-        return ["firstname":firstname as AnyObject, "username": username as AnyObject, "tweetid": tweetid as AnyObject, "tweetimageURL":tweetimageURL as AnyObject, "tweettext":tweettext as AnyObject, "userimageURL":userimageURL as AnyObject]
+        return ["firstname":firstname as AnyObject, "username": username as AnyObject, "tweetid": tweetid as AnyObject, "tweetimageURL":tweetimageURL as AnyObject, "tweettext":tweettext as AnyObject, "userimageURL":userimageURL as AnyObject, "withimg":withimg as AnyObject]
     }
     
     

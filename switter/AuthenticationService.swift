@@ -15,19 +15,17 @@ import FirebaseDatabase
 struct AuthenticationService {
     
     var databaseRef: FIRDatabaseReference! {
-        
         return FIRDatabase.database().reference()
     }
     
     var storageRef: FIRStorageReference! {
-        
         return FIRStorage.storage().reference()
     }
     
     // 3 - We save the user info in the Database
-    private func saveInfo(user: FIRUser!, username: String, password: String, country: String){
+    private func saveInfo(user: FIRUser!, username: String, password: String, country: String, name: String){
         
-        let userInfo = ["email": user.email!, "username": username, "country": country, "uid": user.uid, "photoURL": String(describing: user.photoURL!)]
+        let userInfo = ["email": user.email!, "username": username, "country": country, "uid": user.uid, "photoURL": String(describing: user.photoURL!), "firstname": name]
         
         let userRef = databaseRef.child("users").child(user.uid)
         
@@ -62,13 +60,13 @@ struct AuthenticationService {
     }
     
     // 1 - We create firstly a New User
-    func signUp(email: String, username: String, password: String, country: String, data: NSData!){
+    func signUp(email: String, username: String, password: String, country: String, data: NSData!, firstname: String){
         
         FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: { (user, error) in
             if error == nil {
                 
-                self.setUserInfo(user: user, username: username, password: password, country: country, data: data)
-                
+        self.setUserInfo(user: user, username: username, password: password, country: country, data: data, firstname: firstname)
+        
                 
             }else {
                 
@@ -81,7 +79,7 @@ struct AuthenticationService {
     
     
     // 2 - We set the User Info
-    private func setUserInfo(user: FIRUser!, username: String, password: String, country: String, data: NSData!){
+    private func setUserInfo(user: FIRUser!, username: String, password: String, country: String, data: NSData!, firstname: String){
         
         let imagePath = "profileImage\(user.uid)/userPic.jpg"
         
@@ -103,7 +101,7 @@ struct AuthenticationService {
                 changeRequest.commitChanges(completion: { (error) in
                     if error == nil {
                         
-                        self.saveInfo(user: user, username: username, password: password, country: country)
+                        self.saveInfo(user: user, username: username, password: password, country: country, name: firstname)
                     }
                     else {
                         
