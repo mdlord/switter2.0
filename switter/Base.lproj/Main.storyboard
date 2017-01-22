@@ -579,7 +579,7 @@
         <!--Home-->
         <scene sceneID="SxU-vA-h6t">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="NH4-rV-Kfy" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="vc" automaticallyAdjustsScrollViewInsets="NO" id="NH4-rV-Kfy" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Home" image="Starred Ticket_000000_25" id="jVX-91-Bi4"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="qn2-tx-1Hi">

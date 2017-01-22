@@ -123,7 +123,7 @@ class AddNewPostViewController: UIViewController , UITextViewDelegate, UIImagePi
                     tweetRef.setValue(newTweet.toanyObject(), withCompletionBlock: {(error,ref) in
                     
                         if error==nil{
-                            self.navigationController?.popToRootViewController(animated: true)
+                            self.navigationController!.popToRootViewController(animated: true)
                         }
                     })
                 }else{
@@ -139,7 +139,7 @@ class AddNewPostViewController: UIViewController , UITextViewDelegate, UIImagePi
             tweetRef.setValue(newTweet.toanyObject(), withCompletionBlock: {(error,ref) in
                 
                 if error==nil{
-                    self.navigationController?.popToRootViewController(animated: true)
+                    self.navigationController!.popToRootViewController(animated: true)
                 }
                 
             })
