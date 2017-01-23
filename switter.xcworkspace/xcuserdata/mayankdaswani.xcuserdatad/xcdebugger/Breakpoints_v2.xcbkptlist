@@ -290,13 +290,77 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "switter/AddNewPostViewController.swift"
-            timestampString = "506748085.604446"
+            timestampString = "506828870.609865"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "153"
-            endingLineNumber = "153"
+            startingLineNumber = "176"
+            endingLineNumber = "176"
             landmarkName = "imagePickerController(_:didFinishPickingMediaWithInfo:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "switter/AddNewPostViewController.swift"
+            timestampString = "506824882.634883"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
+            landmarkName = "AddNewPostViewController"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "switter/AddNewPostViewController.swift"
+            timestampString = "506828149.440299"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "134"
+            endingLineNumber = "134"
+            landmarkName = "pushpostbutton(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "function signature specialization &lt;Arg[3] = Value Promoted from Box&gt; of switter.AddNewPostViewController.(pushpostbutton (Any) -&gt; ()).(closure #1)"
+                  moduleName = "switter"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mayankdaswani/Desktop/switter/switter/AddNewPostViewController.swift"
+                  timestampString = "506828149.461544"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "134"
+                  endingLineNumber = "134"
+                  offsetFromSymbolStart = "5767">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "switter.AddNewPostViewController.(pushpostbutton (Any) -&gt; ()).(closure #1).(closure #1)"
+                  moduleName = "switter"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mayankdaswani/Desktop/switter/switter/AddNewPostViewController.swift"
+                  timestampString = "506828149.463428"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "136"
+                  endingLineNumber = "136"
+                  offsetFromSymbolStart = "23">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

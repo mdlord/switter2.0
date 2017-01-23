@@ -19,7 +19,7 @@ class AddNewPostViewController: UIViewController , UITextViewDelegate, UIImagePi
         return FIRStorage.storage()
     }
     
-    var currentUser: user! 
+    var currentUser: user!
     @IBOutlet weak var tweetTextView: UITextView!
     @IBOutlet weak var charCount: UILabel!
     @IBOutlet weak var tweetimage: UIImageView!
@@ -56,6 +56,16 @@ class AddNewPostViewController: UIViewController , UITextViewDelegate, UIImagePi
     }
     
 
+//    @IBAction func discardbtn(_ sender: Any) {
+        
+//        let alertview = SCLAlertView()
+//        alertview.addButton(<#T##title: String##String#>, action: <#T##() -> Void#>))
+//        alertview.addButton("Delete", action: )
+//        alertview.showWarning("Discard Post?", subTitle: "The post will be permanently deleted!")
+        
+        //            alertview.showWarning("Discard Post?", subTitle: "The post will be permanently deleted!", closeButtonTitle: "Go Back", duration: <#T##TimeInterval#>, colorStyle: <#T##UInt#>, colorTextButton: <#T##UInt#>, circleIconImage: <#T##UIImage?#>, animationStyle: <#T##SCLAnimationStyle#>)
+//            alertview.shoe
+//    }
     
     @IBAction func withPicButton(_ sender: Any) {
         
@@ -95,6 +105,7 @@ class AddNewPostViewController: UIViewController , UITextViewDelegate, UIImagePi
 
         
     }
+
     
     @IBAction func pushpostbutton(_ sender: Any) {
         
@@ -123,7 +134,14 @@ class AddNewPostViewController: UIViewController , UITextViewDelegate, UIImagePi
                     tweetRef.setValue(newTweet.toanyObject(), withCompletionBlock: {(error,ref) in
                     
                         if error==nil{
+                            print("boobies")
+                            
+//                            let navigationController = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "SecondNavigationController")
+//                            self.present(navigationController, animated: true, completion: nil)
+
                             self.navigationController!.popToRootViewController(animated: true)
+                           // let storyboard = UIStoryboard()
+                           // self.present(Home, animated: true, completion: nil)
                         }
                     })
                 }else{
@@ -139,7 +157,12 @@ class AddNewPostViewController: UIViewController , UITextViewDelegate, UIImagePi
             tweetRef.setValue(newTweet.toanyObject(), withCompletionBlock: {(error,ref) in
                 
                 if error==nil{
-                    self.navigationController!.popToRootViewController(animated: true)
+                  
+                    print("wih")
+//                    let navigationController = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "SecondNavigationController")
+                    //self.present(navigationController, animated: true, completion: nil)
+                      self.navigationController!.popToRootViewController(animated: true)
+                   // self.present(Home, animated: true, completion: nil)
                 }
                 
             })

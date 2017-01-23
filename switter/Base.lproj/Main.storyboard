@@ -23,10 +23,10 @@
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="pushwithimage" rowHeight="347" id="r0h-f3-Tuq" customClass="ImagepushCell" customModule="switter" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="56" width="375" height="347"/>
+                                <rect key="frame" x="0.0" y="55.5" width="375" height="347"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="r0h-f3-Tuq" id="YWt-L0-JkT">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="346"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="346.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hvN-7P-4Qr">
@@ -85,10 +85,10 @@
                                 <color key="tintColor" red="0.74725948949999998" green="0.74725948949999998" blue="0.74725948949999998" alpha="1" colorSpace="calibratedRGB"/>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="pushwithout" rowHeight="347" id="8hE-Hi-OkC" customClass="TextpushCell" customModule="switter" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="403" width="375" height="347"/>
+                                <rect key="frame" x="0.0" y="402.5" width="375" height="347"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8hE-Hi-OkC" id="GQy-kb-tJ5">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="346"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="346.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2ba-KV-o6Y">
@@ -214,7 +214,7 @@
                     <navigationItem key="navigationItem" title="Add New Post" id="fo1-IS-RIL">
                         <barButtonItem key="leftBarButtonItem" systemItem="trash" id="VCx-IL-mQe">
                             <connections>
-                                <segue destination="NH4-rV-Kfy" kind="presentation" id="TMC-sb-Hy6"/>
+                                <action selector="discardbtn:" destination="Wlz-UE-9i7" id="4nb-nh-lSU"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="Chevron_000000_50" id="iq7-iS-40y">
@@ -557,10 +557,10 @@
             </objects>
             <point key="canvasLocation" x="2126" y="-1173"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Home-->
         <scene sceneID="6yh-Dg-XnJ">
             <objects>
-                <tabBarController storyboardIdentifier="Home" id="Gqy-nm-S5S" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="Home" title="Home" id="Gqy-nm-S5S" customClass="TabController" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" itemPositioning="fill" id="5Bc-jS-41i">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -579,7 +579,7 @@
         <!--Home-->
         <scene sceneID="SxU-vA-h6t">
             <objects>
-                <navigationController storyboardIdentifier="vc" automaticallyAdjustsScrollViewInsets="NO" id="NH4-rV-Kfy" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="NH4-rV-Kfy" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Home" image="Starred Ticket_000000_25" id="jVX-91-Bi4"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="qn2-tx-1Hi">
@@ -619,8 +619,9 @@
         <!--New Post-->
         <scene sceneID="KMe-zi-9Yf">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZCf-vs-CU4" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="YB4-Pe-u4n" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="New Post" image="Plus_000000_25" id="N5V-kD-frr"/>
+                    <tabBarItem key="tabBarItem" title="New Post" image="FC15FB84-E163-4D68-A124-067E036A557E" id="N5V-kD-frr"/>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="76F-5a-N1v"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="xoW-PG-i8p">
@@ -632,7 +633,6 @@
                         <segue destination="Wlz-UE-9i7" kind="relationship" relationship="rootViewController" id="f4c-nN-6dY"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ZCf-vs-CU4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1233" y="-452"/>
         </scene>
@@ -641,14 +641,105 @@
         <image name="Chevron_000000_50" width="25" height="25"/>
         <image name="Circled User Male_000000_25" width="25" height="25"/>
         <image name="Compact Camera_000000_50" width="50" height="50"/>
+        <image name="FC15FB84-E163-4D68-A124-067E036A557E" width="25" height="25">
+            <mutableData key="keyedArchiveRepresentation">
+YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
+GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
+c1dOU0NvbG9ygAKADRIgwAAAgAOAC1h7MjUsIDI1fdIVChYYWk5TLm9iamVjdHOhF4AEgArSFQoaHaIb
+HIAFgAaACRAA0iAKISJfEBROU1RJRkZSZXByZXNlbnRhdGlvboAHgAhPERJiTU0AKgAACcwAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAABgAAAC0AAABGAAAATgAAAEYAAAAtAAAABgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlAAAAhgAAAMoAAADGAAAA
+vwAAAL0AAAC/AAAAxgAAAMkAAACFAAAAJAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAUAAAB5AAAA1gAAAJkAAAA9AAAAFAAAAAAAAAAAAAAAAAAAABQAAAA+AAAA
+mQAAANYAAAB4AAAABQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA0AAACqAAAA
+vwAAADAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAxAAAAwAAAAKkAAAANAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAYAAACpAAAAqQAAAAoAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoAAACpAAAAqQAAAAYAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAB4AAAAvwAAAAsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAACwAAAMEAAAB2AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAkAAAA2AAAAC0AAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAPAAAAvgAAAA8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAuAAAA
+2AAAACIAAAAAAAAAAAAAAAAAAAAAAAAAhwAAAJkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+EQAAAOAAAAARAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAJsAAACGAAAAAAAAAAAAAAAAAAAA
+CAAAAMkAAAA8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABEAAADcAAAAEQAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAA+AAAAyQAAAAcAAAAAAAAAAAAAAC0AAADGAAAAEgAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAPAAAA3AAAAA8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+EwAAAMcAAAAsAAAAAAAAAAAAAABGAAAAvwAAAAEAAAAAAAAAAAAAAAAAAAAPAAAAEQAAABEAAAARAAAA
+IQAAAN4AAAAhAAAAEQAAABEAAAARAAAADwAAAAAAAAAAAAAAAAAAAAEAAAC/AAAARQAAAAAAAAAAAAAA
+TgAAAL0AAAAAAAAAAAAAAAAAAAADAAAAvgAAANwAAADcAAAA3AAAAN4AAAD6AAAA3gAAANwAAADcAAAA
+3AAAAL4AAAADAAAAAAAAAAAAAAAAAAAAvQAAAE0AAAAAAAAAAAAAAEYAAAC/AAAAAQAAAAAAAAAAAAAA
+AAAAAA8AAAARAAAAEQAAABEAAAAhAAAA3gAAACEAAAARAAAAEQAAABEAAAAPAAAAAAAAAAAAAAAAAAAA
+AQAAAL8AAABFAAAAAAAAAAAAAAAtAAAAxgAAABMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+DwAAANwAAAAPAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABMAAADHAAAALAAAAAAAAAAAAAAA
+CAAAAMoAAAA9AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABEAAADcAAAAEQAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAA+AAAAyQAAAAcAAAAAAAAAAAAAAAAAAACGAAAAmgAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAARAAAA4AAAABEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+mwAAAIUAAAAAAAAAAAAAAAAAAAAAAAAAIwAAANgAAAAuAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+DwAAAL4AAAAPAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALwAAANcAAAAiAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAB2AAAAwAAAAAsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAACwAAAMEAAAB1AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABgAAAKgAAACqAAAA
+CgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACwAAAKsAAACoAAAA
+BgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAANAAAAqAAAAMAAAAAxAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMgAAAMEAAACnAAAADQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAUAAAB4AAAA1gAAAJoAAAA/AAAAFQAAAAAAAAAAAAAAAAAAABUAAAA/AAAA
+mgAAANYAAAB2AAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAACMAAACFAAAAyQAAAMYAAAC/AAAAvQAAAL8AAADGAAAAyQAAAIQAAAAjAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAYAAAAsAAAA
+RQAAAE4AAABFAAAALAAAAAUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA4BAAADAAAAAQAZAAABAQADAAAAAQAZAAAB
+AgADAAAABAAACnoBAwADAAAAAQABAAABBgADAAAAAQACAAABEQAEAAAAAQAAAAgBEgADAAAAAQABAAAB
+FQADAAAAAQAEAAABFgADAAAAAQAZAAABFwAEAAAAAQAACcQBHAADAAAAAQABAAABUgADAAAAAQABAAAB
+UwADAAAABAAACoKHcwAHAAAH2AAACooAAAAAAAgACAAIAAgAAQABAAEAAQAAB9hhcHBsAiAAAG1udHJS
+R0IgWFlaIAfZAAIAGQALABoAC2Fjc3BBUFBMAAAAAGFwcGwAAAAAAAAAAAAAAAAAAAAAAAD21gABAAAA
+ANMtYXBwbAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAC2Rlc2MA
+AAEIAAAAb2RzY20AAAF4AAAFnGNwcnQAAAcUAAAAOHd0cHQAAAdMAAAAFHJYWVoAAAdgAAAAFGdYWVoA
+AAd0AAAAFGJYWVoAAAeIAAAAFHJUUkMAAAecAAAADmNoYWQAAAesAAAALGJUUkMAAAecAAAADmdUUkMA
+AAecAAAADmRlc2MAAAAAAAAAFEdlbmVyaWMgUkdCIFByb2ZpbGUAAAAAAAAAAAAAABRHZW5lcmljIFJH
+QiBQcm9maWxlAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABt
+bHVjAAAAAAAAAB8AAAAMc2tTSwAAACgAAAGEZGFESwAAAC4AAAGsY2FFUwAAACQAAAHadmlWTgAAACQA
+AAH+cHRCUgAAACYAAAIidWtVQQAAACoAAAJIZnJGVQAAACgAAAJyaHVIVQAAACgAAAKaemhUVwAAABYA
+AALCbmJOTwAAACYAAALYY3NDWgAAACIAAAL+aGVJTAAAAB4AAAMgaXRJVAAAACgAAAM+cm9STwAAACQA
+AANmZGVERQAAACwAAAOKa29LUgAAABYAAAO2c3ZTRQAAACYAAALYemhDTgAAABYAAAPMamFKUAAAABoA
+AAPiZWxHUgAAACIAAAP8cHRQTwAAACYAAAQebmxOTAAAACgAAAREZXNFUwAAACYAAAQedGhUSAAAACQA
+AARsdHJUUgAAACIAAASQZmlGSQAAACgAAASyaHJIUgAAACgAAATacGxQTAAAACwAAAUCcnVSVQAAACIA
+AAUuYXJFRwAAACYAAAVQZW5VUwAAACYAAAV2AFYBYQBlAG8AYgBlAGMAbgD9ACAAUgBHAEIAIABwAHIA
+bwBmAGkAbABHAGUAbgBlAHIAZQBsACAAUgBHAEIALQBiAGUAcwBrAHIAaQB2AGUAbABzAGUAUABlAHIA
+ZgBpAGwAIABSAEcAQgAgAGcAZQBuAOgAcgBpAGMAQx6lAHUAIABoAOwAbgBoACAAUgBHAEIAIABDAGgA
+dQBuAGcAUABlAHIAZgBpAGwAIABSAEcAQgAgAEcAZQBuAOkAcgBpAGMAbwQXBDAEMwQwBDsETAQ9BDgE
+OQAgBD8EQAQ+BEQEMAQ5BDsAIABSAEcAQgBQAHIAbwBmAGkAbAAgAGcA6QBuAOkAcgBpAHEAdQBlACAA
+UgBWAEIAwQBsAHQAYQBsAOEAbgBvAHMAIABSAEcAQgAgAHAAcgBvAGYAaQBskBp1KAAgAFIARwBCACCC
+cl9pY8+P8ABHAGUAbgBlAHIAaQBzAGsAIABSAEcAQgAtAHAAcgBvAGYAaQBsAE8AYgBlAGMAbgD9ACAA
+UgBHAEIAIABwAHIAbwBmAGkAbAXkBegF1QXkBdkF3AAgAFIARwBCACAF2wXcBdwF2QBQAHIAbwBmAGkA
+bABvACAAUgBHAEIAIABnAGUAbgBlAHIAaQBjAG8AUAByAG8AZgBpAGwAIABSAEcAQgAgAGcAZQBuAGUA
+cgBpAGMAQQBsAGwAZwBlAG0AZQBpAG4AZQBzACAAUgBHAEIALQBQAHIAbwBmAGkAbMd8vBgAIABSAEcA
+QgAg1QS4XNMMx3xmbpAaACAAUgBHAEIAIGPPj/Blh072TgCCLAAgAFIARwBCACAw1zDtMNUwoTCkMOsD
+kwO1A70DuQO6A8wAIAPAA8EDvwPGA68DuwAgAFIARwBCAFAAZQByAGYAaQBsACAAUgBHAEIAIABnAGUA
+bgDpAHIAaQBjAG8AQQBsAGcAZQBtAGUAZQBuACAAUgBHAEIALQBwAHIAbwBmAGkAZQBsDkIOGw4jDkQO
+Hw4lDkwAIABSAEcAQgAgDhcOMQ5IDicORA4bAEcAZQBuAGUAbAAgAFIARwBCACAAUAByAG8AZgBpAGwA
+aQBZAGwAZQBpAG4AZQBuACAAUgBHAEIALQBwAHIAbwBmAGkAaQBsAGkARwBlAG4AZQByAGkBDQBrAGkA
+IABSAEcAQgAgAHAAcgBvAGYAaQBsAFUAbgBpAHcAZQByAHMAYQBsAG4AeQAgAHAAcgBvAGYAaQBsACAA
+UgBHAEIEHgQxBEkEOAQ5ACAEPwRABD4ERAQ4BDsETAAgAFIARwBCBkUGRAZBACAGKgY5BjEGSgZBACAA
+UgBHAEIAIAYnBkQGOQYnBkUARwBlAG4AZQByAGkAYwAgAFIARwBCACAAUAByAG8AZgBpAGwAZXRleHQA
+AAAAQ29weXJpZ2h0IDIwMDcgQXBwbGUgSW5jLiwgYWxsIHJpZ2h0cyByZXNlcnZlZC4AWFlaIAAAAAAA
+APNSAAEAAAABFs9YWVogAAAAAAAAdE0AAD3uAAAD0FhZWiAAAAAAAABadQAArHMAABc0WFlaIAAAAAAA
+ACgaAAAVnwAAuDZjdXJ2AAAAAAAAAAEBzQAAc2YzMgAAAAAAAQxCAAAF3v//8yYAAAeSAAD9kf//+6L/
+//2jAAAD3AAAwGzSJSYnKFokY2xhc3NuYW1lWCRjbGFzc2VzXxAQTlNCaXRtYXBJbWFnZVJlcKMnKSpa
+TlNJbWFnZVJlcFhOU09iamVjdNIlJiwtV05TQXJyYXmiLCrSJSYvMF5OU011dGFibGVBcnJheaMvLCrT
+MjMKNDU2V05TV2hpdGVcTlNDb2xvclNwYWNlRDAgMAAQA4AM0iUmODlXTlNDb2xvcqI4KtIlJjs8V05T
+SW1hZ2WiOypfEA9OU0tleWVkQXJjaGl2ZXLRP0BUcm9vdIABAAgAEQAaACMALQAyADcARgBMAFcAXgBl
+AHIAeQCBAIMAhQCKAIwAjgCXAJwApwCpAKsArQCyALUAtwC5ALsAvQDCANkA2wDdE0MTSBNTE1wTbxNz
+E34ThxOME5QTlxOcE6sTrxO2E74TyxPQE9IT1BPZE+ET5BPpE/ET9BQGFAkUDgAAAAAAAAIBAAAAAAAA
+AEEAAAAAAAAAAAAAAAAAABQQA
+</mutableData>
+        </image>
         <image name="Person Male_000000_75" width="64" height="64"/>
-        <image name="Plus_000000_25" width="25" height="25"/>
         <image name="Starred Ticket_000000_25" width="25" height="25"/>
         <image name="wersm-twitter-blue-dark-657x360" width="657" height="360"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="TMC-sb-Hy6"/>
-        <segue reference="Lh9-xy-Gbe"/>
+        <segue reference="rCl-dQ-YR4"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.18240781659999999" green="0.38114779830000001" blue="0.5909974093" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
