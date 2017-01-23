@@ -134,7 +134,7 @@ class AddNewPostViewController: UIViewController , UITextViewDelegate, UIImagePi
                     tweetRef.setValue(newTweet.toanyObject(), withCompletionBlock: {(error,ref) in
                     
                         if error==nil{
-                            print("boobies")
+                            print("with img")
                             
 //                            let navigationController = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "SecondNavigationController")
 //                            self.present(navigationController, animated: true, completion: nil)
@@ -158,7 +158,7 @@ class AddNewPostViewController: UIViewController , UITextViewDelegate, UIImagePi
                 
                 if error==nil{
                   
-                    print("wih")
+                    print("without img")
 //                    let navigationController = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "SecondNavigationController")
                     //self.present(navigationController, animated: true, completion: nil)
                       self.navigationController!.popToRootViewController(animated: true)
